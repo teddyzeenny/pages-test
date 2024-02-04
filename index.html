@@ -18,11 +18,25 @@
 
     gtag('config', 'G-TP8YPXH5CL');
   </script>
+  <script>
+    // Listen for clicks on the link
+    document.querySelector('js-download-report').addEventListener('click', function () {
+      // Replace 'your_link_class' with the actual class or ID of your link
+      // Make sure the selector accurately targets your PDF link
+
+      gtag('event', 'click', {
+        'event_category': 'Download Report',
+        'event_label': 'Download Report',
+        'transport_type': 'beacon'
+      });
+    });
+
+  </script>
   <body>
     <nav class="bg-white centered flex items-center h-[100px] gap-16 justify-center relative">
       <a href="." class="text-lg underline text-primary font-bold">About</a>
       <a href="https://www.github.com" target="_blank">GitHub</a>
-      <a href="" class="button button-primary hidden absolute right-16 top-1/2 -translate-y-1/2 md:inline">
+      <a href="" class="button button-primary hidden absolute right-16 top-1/2 -translate-y-1/2 md:inline js-download-report">
         Download Report
       </a>
     </nav>
@@ -61,11 +75,11 @@
               What has happened so far, has not happened before.
             </p>
             <p class="body-1">January</p>
-            <a class="button hidden lg:block">Download the Report</a>
+            <a class="button hidden lg:block js-download-report">Download the Report</a>
           </section>
 
           <div class="flex-1 flex flex-col items-center gap-10 lg:justify-end lg:flex-row">
-            <a class="button w-full lg:hidden">Download the Report</a>
+            <a class="button w-full lg:hidden js-download-report">Download the Report</a>
           </div>
         </div>
       </section>
